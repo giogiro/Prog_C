@@ -1,0 +1,57 @@
+.model Es4
+
+.inputs a b c d e
+
+.outputs x v w z
+
+.names a b c d e f
+01--1 1
+--11- 1
+1-01- 1
+
+.names a b c d e g
+---11 1
+111-- 1
+1-01- 1
+
+.names a b c d e h
+1---1 1
+--11- 1
+11--- 1
+
+.names g h i
+1- 1
+-0 1
+
+.names a b c e g l
+1---1 1
+-11-0 1
+1--1- 1
+
+.names b c i f m
+---1 1
+--1- 1
+11-- 1
+
+.names a i l n
+--1 1
+10- 1
+
+.names a b e m o
+---1 1
+1--- 1
+-01- 1
+
+.names f x
+1 1
+
+.names o v
+1 1
+
+.names n w
+1 1
+
+.names l z
+1 1
+
+.end

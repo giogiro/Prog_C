@@ -1,0 +1,32 @@
+.model sottrazione
+.inputs a1 a0 b1 b0
+.outputs s1 s0
+.names a1 a0 b1 b0 s1
+0001 1
+1000 1
+1011 1
+1100 1
+1101 1
+
+.names a1 a0 b1 b0 s0
+0001 1
+0011 1
+0100 1
+1011 1
+1100 1
+1110 1
+
+.exdc
+.names a1 a0 b1 b0 s1
+0010 1
+0110 1
+0111 1
+1001 1
+
+.names a1 a0 b1 b0 s0
+0010 1
+0110 1
+0111 1
+1001 1
+
+.end

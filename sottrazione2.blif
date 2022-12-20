@@ -1,0 +1,47 @@
+.model sottrazione2
+.inputs a1 a0 b1 b0
+.outputs s1 s0
+
+# INVERSIONE
+.names b1 b0 c1
+00 1
+01 1
+
+.names b1 b0 c0
+00 1
+10 1
+
+# SOMMA 1
+
+.names c1 c0 d1
+01 1
+10 1
+
+.names c1 c0 d0
+00 1
+10 1
+
+# SOMMA
+
+.names a1 a0 d1 d0 s1
+0010 1
+0011 1
+0101 1
+0110 1
+1000 1
+1001 1
+1100 1
+1111 1
+
+.names a1 a0 d1 d0 s0
+0001 1
+0011 1
+0100 1
+0110 1
+1001 1
+1011 1
+1100 1
+1110 1
+
+.end
+
