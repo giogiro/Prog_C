@@ -10,6 +10,7 @@ struct date {
 	int year;
 };
 
+//creo i prototipi di tutte le funzioni che mi serviranno
 struct date insertDate(); //chiedo a utente giorno mese e anno, restutuisco la struttura date
 bool checkDate(struct date);
 int giornoMax(struct date); //passo la struttura e mi restituisce il numero di giorni di quel mese
@@ -36,6 +37,7 @@ struct date insertDate(){
     } while (checkDate(a) == false);
     return a;
 }
+
 int giornoMax(struct date a){
     int giorni[]={0,31,28,31,30,31,30,31,31,30,31,30,31};
     if (bisestile(a) == true)
