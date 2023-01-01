@@ -1,0 +1,36 @@
+.model automa
+.inputs START IN1 IN0
+.outputs OUT
+.start_kiss  #inizio a descrivere tabella delle transizioni
+.i 3   #numero di segnali di ingresso
+.o 1   #numero di segnali di uscita
+.s 5   #numero di stati
+.p 15  #numero di transizioni
+.r A #stato di reset
+            #tabella delle transizioni
+            #(ingressi, stato presente, stato prossimo, uscita)
+0-- A A 0
+1-- A B 0
+--1 B B 0
+-1- B B 0
+-00 B C 0
+-00 C C 0
+-1- C B 0
+-01 C D 0
+-00 D C 0
+-10 D B 0
+-01 D B 0
+-11 D E 1
+--1 E E 1
+-0- E E 1
+-10 E A 0
+.end_kiss
+            #codifica degli stati.
+            #E’ opzionale perché può essere calcolata automaticamente
+            #tramite il comando state_assign jedi
+.code A 000
+.code B 001
+.code C 010
+.code D 011
+.code E 100
+.end

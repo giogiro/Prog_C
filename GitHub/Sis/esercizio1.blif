@@ -1,0 +1,53 @@
+.model esercizio1
+.inputs i0 i1
+.outputs o0 o1
+
+.start_kiss
+.i 2
+.o 2
+.p 36
+.s 9
+.r A
+
+#tabella degli stati
+#i0 i1 stato_presente stato_futuro o0 o1
+00 A D 10 
+01 A D 00
+10 A A 11
+11 A D 11
+00 B B 1-
+01 B A --
+10 B B -1
+11 B C --
+00 C C 0-
+01 C H -1
+10 C I -0
+11 C A -0
+00 D A 10
+01 D A -0
+10 D D 11
+11 D A 11
+00 E G 10
+01 E G --
+10 E C -1
+11 E I 1-
+00 F H --
+01 F H -0
+10 F A 01
+11 F B 10
+00 G A 10
+01 G G -0
+10 G H 00
+11 G D 11
+00 H D 1-
+01 H G -0
+10 H H 00
+11 H A -1
+00 I F --
+01 I F 11
+10 I E 00
+11 I A 01
+.end_kiss
+
+.end
+
