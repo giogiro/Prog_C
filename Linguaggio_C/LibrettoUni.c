@@ -83,11 +83,11 @@ effettuata dall'utente non è quella di uscire.*/
             break;
 
             case 'c':
-            //printf("media: %d\n", media_esami(libretto1)); //stampo l'int che mi torna la funzione media_esami
+            printf("media: %d\n", media(libretto1)); //stampo l'int che mi torna la funzione media_esami
             break;
 
             case 'd':
-            //printf("numero lodi: %d\n", numero_lodi(libretto1));
+            printf("numero lodi: %d\n", num_lodi(libretto1));
             break;
 
             case 'e':
@@ -126,4 +126,22 @@ void stampa_esami(struct libretto l){
         printf("%s ",l.esami[i].nomeCorso);
     }
     printf("\n");
+}
+
+int media(struct libretto l){
+    int i, media=0,somma=0;
+    for(i=0; i<l.numeroEsami; i++){
+        somma = somma + l.esami[i].voto;
+    }
+    media = somma / l.numeroEsami;
+    return media;
+}
+
+int num_lodi(struct libretto l){
+    int i,lodi=0;
+    for(i=0; i<l.numeroEsami; i++){
+        if(l.esami[i].lode)
+            lodi =+ lodi;
+    }
+    return lodi;
 }
