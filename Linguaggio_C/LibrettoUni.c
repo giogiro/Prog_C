@@ -61,25 +61,26 @@ effettuata dall'utente non è quella di uscire.*/
     do{             //ripeto la scelta dell'operazione finche scelta == 'e';
         stampa_menu();  //stampo il menu
         scelta = leggi_scelta();  //faccio scegliere la lettera per l'operazione
+        printf("%c",scelta);
 
         switch (scelta){
             case 'a':
-            struct esame es;
             printf("inserisci la data dell'esame: ");
             scanf("%d/%d/%d", &es.d.day, &es.d.month, &es.d.year);
             printf("inserisci il nome del corso (3 lettere): ");
-            scanf(" %s", es.nomeCorso);
+            scanf(" %s", &es.nomeCorso);
             printf("inserisci le iniziali del docente (2 lettere): ");
-            scanf(" %s", es.nomeDocente);
+            scanf(" %s", &es.nomeDocente);
             printf("inserisci il voto: ");
-            scanf("%d", es.voto);
+            scanf("%d", &es.voto);
             printf("lode? (0:no, 1:si): ");
-            scanf("%d", es.lode);
+            scanf("%d", &es.lode);
             libretto1 = registra_esame(libretto1, es); //inserisco l'es che ho appena inserito in libretto1
             break;
 
             case 'b':
             stampa_esami(libretto1); //stampa gli esami contenuti in lib
+            break;
 
             case 'c':
             //printf("media: %d\n", media_esami(libretto1)); //stampo l'int che mi torna la funzione media_esami
@@ -96,18 +97,18 @@ effettuata dall'utente non è quella di uscire.*/
     }while(scelta=='a' || scelta=='b' || scelta=='c' || scelta=='d');
 
 }
-//registra esame, stampa esami, calcola media, conta lodi, esci dal programma.
 
 void stampa_menu(){
     printf("[a] registra esame\n[b] stampa esami\n[c]calcola media\n");
-    printf("[d]conta lodi\n[e]esci dal programma");
+    printf("[d]conta lodi\n[e]esci dal programma\n");
 }
 
 char leggi_scelta(){
     char c;
     do{
+        printf("---cosa vuoi fare?\n");
         scanf(" %c",&c);
-    }while(c!='a' && c!='b' && c!='d' && c!='e');
+    }while(c!='a' && c!='b' && c!='c' && c!='d' && c!='e'); //se la scelta è diversa da abcde riinserisci
     return c;
 }
 
@@ -119,7 +120,10 @@ struct libretto registra_esame(struct libretto l, struct esame es){
 
 void stampa_esami(struct libretto l){
     int i;
+    printf("numero esami: %d\n",l.numeroEsami);
+    printf("dei corsi: ");
     for(i=0; i<l.numeroEsami; i++){
-        printf("%s\n",l.esami[i].nomeCorso);
+        printf("%s ",l.esami[i].nomeCorso);
     }
+    printf("\n");
 }
