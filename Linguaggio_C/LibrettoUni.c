@@ -114,7 +114,7 @@ char leggi_scelta(){
 
 struct libretto registra_esame(struct libretto l, struct esame es){
     l.esami[l.numeroEsami] = es;  //modifico il libretto passato come arg. mettendolo in esami[]
-    l.numeroEsami =+ 1;     //incremento numeroEsami che uso come indice in esami[]
+    l.numeroEsami ++;     //incremento numeroEsami che uso come indice in esami[]
     return l;
 }
 
